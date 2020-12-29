@@ -29,6 +29,50 @@ canonicalUrl: https://devii.dev/blog/devii
 
 This year I wished
 
+### Production Config
+
+Here is the production config. You'll note that `Dockerfile` is mostly the same as `Dockerfile.dev`, with the exception of environment variables and the command that gets ran (`npm run dev` vs `npm start`). If anyone has a better method for handling Development vs Production commands please let me know!
+
+*Dockerfile*
+```docker
+FROM node:alpine
+
+RUN mkdir -p /app
+
+ENV NODE_ENV production
+ENV PORT 3000
+
+EXPOSE 3000
+
+WORKDIR /app
+
+COPY package.json /app
+COPY package-lock.json /app
+
+RUN npm install
+
+COPY . /app
+
+RUN npm run build
+
+RUN npx next telemetry disable
+
+CMD [ "npm", "start" ]
+```
+
+*docker-compose.yml*
+```yml
+version: '3'
+
+services:
+  nextjsprod:
+    ports:
+      - 3000:3000
+    build:
+      context: .
+      dockerfile: Dockerfile
+```
+
 ### Development Config
 
 *Dockerfile.dev*
@@ -73,49 +117,17 @@ services:
       - /app/.next
 ```
 
-
-### Production Config
-
-Here is the production config. You'll note that `Dockerfile` is mostly the same as `Dockerfile.dev`, with the exception of environment variables and the command that gets ran (`npm run dev` vs `npm start`). If anyone has a better method for handling Development vs Production commands please let me know!
-
-*Dockerfile*
-```docker
-FROM node:alpine
-
-RUN mkdir -p /app
-
-ENV NODE_ENV production
-ENV PORT 3000
-
-EXPOSE 3000
-
-WORKDIR /app
-
-COPY package.json /app
-COPY package-lock.json /app
-
-RUN npm install
-
-COPY . /app
-
-RUN npm run build
-
-RUN npx next telemetry disable
-
-CMD [ "npm", "start" ]
-```
-
-*docker-compose.yml*
-```yml
-version: '3'
-
-services:
-  nextjsprod:
-    ports:
-      - 3000:3000
-    build:
-      context: .
-      dockerfile: Dockerfile
+*next.config.js*
+```javascript
+module.exports = {
+  webpackDevMiddleware: config => {
+    config.watchOptions = {
+      poll: 1000,
+      aggregateTimeout: 300,
+    }
+    return config
+  },
+}
 ```
 
 ### Scripts
