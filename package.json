@@ -1,0 +1,27 @@
+{
+  "name": "hdwatts-portfolio-v3",
+  "version": "1.0.0",
+  "description": "\"Howard Watts personal portfolio, exploring Next.js and CheapStack\"",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "test": "jest"
+  },
+  "keywords": [
+    "portfolio",
+    "cheapstack",
+    "cheap",
+    "nextjs",
+    "next"
+  ],
+  "author": "hdwatts",
+  "license": "ISC",
+  "dependencies": {
+    "next": "^10.0.4",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "sharp": "^0.26.3"
+  }
+}
