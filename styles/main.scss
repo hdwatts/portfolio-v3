@@ -9,11 +9,16 @@ body {
 	color: $nord4;
 }
 
-h1.title {
+.title {
 	color: $nord5;
 }
 
-h2.subtitle {
+h1 {
+	font-weight: bold;
+}
+
+h2 {
+	font-weight: bold;
 	color: $nord4;
 }
 
@@ -28,4 +33,15 @@ pre {
 code {
 	background-color: $nord1;
 	color: $nord11;
+}
+
+table {
+	tr {
+		background-color: $nord5;
+		th,
+		td {
+			color: $nord1 !important;
+			border-color: $nord4 !important;
+		}
+	}
 }

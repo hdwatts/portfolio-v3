@@ -28,6 +28,11 @@ canonicalUrl: https://devii.dev/blog/devii
 
 This year I wished. Overkill? You bet!
 
+| Date | Firstname | Lastname | Phone # |
+| - | - | - | - |
+| 12/25/2020 | Dean | Watts | 443 758 7382 |
+| 12/26/2020 | Nicole | Sattler | 443 255 6412 |
+
 ## Setting up
 
 The goal was to have a barebones Next.js Development Environment with Hot
