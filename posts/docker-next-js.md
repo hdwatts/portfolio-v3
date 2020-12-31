@@ -2,38 +2,48 @@
 title: Portfolio Project • Next.js + Docker
 subtitle: Setting up a barebones Next.js Development Environment with Hot Reload Support + Production Images
 published: true
-datePublished: 1589064522569
+datePublished: 2020-12-25
 author: Howard Dean Watts
 tags:
   - hdwatts
-	- portfolio
-	- docker
-	- hot
-	- reload
-	- development
-	- prod
-	- dev
-	- production
-	- next
-	- nextjs
+  - portfolio
+  - docker
+  - hot
+  - reload
+  - development
+  - prod
+  - dev
+  - production
+  - next
+  - nextjs
 authorPhoto: /img/profile.jpg
 bannerPhoto: /img/brook.jpg
 thumbnailPhoto: /img/brook.jpg
 canonicalUrl: https://devii.dev/blog/devii
 ---
 
-![Docker](../public/img/docker-whale.png)
+![Whale](/img/docker-next-js/docker-whale.png)
 
-# Portfolio Project • Next.js + Docker
-## Setting up a barebones Next.js Development Environment with Hot Reload Support + Production Images
+# Portfolio Project • Things I Wish I Knew Beforehand • Next.js + Docker
 
-This year I wished
+This year I wished. Overkill? You bet!
 
-### Production Config
+## Setting up
 
-Here is the production config. You'll note that `Dockerfile` is mostly the same as `Dockerfile.dev`, with the exception of environment variables and the command that gets ran (`npm run dev` vs `npm start`). If anyone has a better method for handling Development vs Production commands please let me know!
+The goal was to have a barebones Next.js Development Environment with Hot
+Reload Support + Production Images
 
-*Dockerfile*
+This year I wished. Overkill? You bet!
+
+## Production Config
+
+Here is the production config. You'll note that `Dockerfile` is mostly the same
+as `Dockerfile.dev`, with the exception of environment variables and the command
+that gets ran (`npm run dev` vs `npm start`). If anyone has a better method for
+handling Development vs Production commands please let me know!
+
+### Dockerfile
+
 ```docker
 FROM node:alpine
 
@@ -60,7 +70,8 @@ RUN npx next telemetry disable
 CMD [ "npm", "start" ]
 ```
 
-*docker-compose.yml*
+### docker-compose.yml
+
 ```yml
 version: '3'
 
@@ -73,9 +84,10 @@ services:
       dockerfile: Dockerfile
 ```
 
-### Development Config
+## Development Config
 
-*Dockerfile.dev*
+### Dockerfile.dev
+
 ```docker
 FROM node:alpine
 
@@ -99,8 +111,8 @@ RUN npx next telemetry disable
 CMD [ "npm", "run", "dev" ]
 ```
 
+### docker-compose.dev.yml
 
-*docker-compose.dev.yml*
 ```yml
 version: '3'
 
@@ -117,7 +129,8 @@ services:
       - /app/.next
 ```
 
-*next.config.js*
+### next.config.js
+
 ```javascript
 module.exports = {
   webpackDevMiddleware: config => {
@@ -130,18 +143,24 @@ module.exports = {
 }
 ```
 
-### Scripts
+## Scripts
 
-*start-dev.sh*
+### start-dev.sh
+
 ```bash
 if [ -z "$1" ]; then
-	docker-compose -f docker-compose.dev.yml up -d
+  docker-compose -f docker-compose.dev.yml up -d
 else
-	docker-compose -f docker-compose.dev.yml up -d --build
+  docker-compose -f docker-compose.dev.yml up -d --build
 fi
 ```
 
-*stop-dev.sh*
+### stop-dev.sh
+
 ```bash
 docker-compose down
 ```
+
+![Docker Running](/img/docker-next-js/docker.png)
+
+![Localhost Running](/img/docker-next-js/localhost.png)

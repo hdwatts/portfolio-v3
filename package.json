@@ -1,27 +1,40 @@
 {
-  "name": "hdwatts-portfolio-v3",
-  "version": "1.0.0",
-  "description": "\"Howard Watts personal portfolio, exploring Next.js and CheapStack\"",
-  "main": "index.js",
-  "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start",
-    "test": "jest"
-  },
-  "keywords": [
-    "portfolio",
-    "cheapstack",
-    "cheap",
-    "nextjs",
-    "next"
-  ],
-  "author": "hdwatts",
-  "license": "ISC",
-  "dependencies": {
-    "next": "^10.0.4",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "sharp": "^0.26.3"
-  }
+	"name": "hdwatts-portfolio-v3",
+	"version": "1.0.0",
+	"description": "\"Howard Watts personal portfolio, exploring Next.js and CheapStack\"",
+	"main": "index.js",
+	"scripts": {
+		"dev": "next",
+		"build": "next build",
+		"start": "next start",
+		"test": "jest",
+		"type-check": "tsc"
+	},
+	"keywords": [
+		"portfolio",
+		"cheapstack",
+		"cheap",
+		"nextjs",
+		"next"
+	],
+	"author": "hdwatts",
+	"license": "ISC",
+	"dependencies": {
+		"bulma": "^0.9.1",
+		"glob": "^7.1.6",
+		"gray-matter": "^4.0.2",
+		"next": "^10.0.4",
+		"raw-loader": "^4.0.2",
+		"react": "^17.0.1",
+		"react-dom": "^17.0.1",
+		"react-markdown": "^5.0.3",
+		"react-syntax-highlighter": "^15.4.3",
+		"sharp": "^0.26.3"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.1.3",
+		"@types/node": "^14.14.16",
+		"@types/react": "^17.0.0",
+		"typescript": "^4.1.3"
+	}
 }

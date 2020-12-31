@@ -1,0 +1,11 @@
+# @format
+
+version: '3'
+
+services:
+  nextjsprod:
+    ports:
+      - 3001:3000
+    build:
+      context: .
+      target: production
