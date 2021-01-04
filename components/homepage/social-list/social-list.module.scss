@@ -1,0 +1,14 @@
+/** @format */
+
+@import 'bulma/sass/utilities/_all';
+
+.socialList {
+	@include mobile {
+		margin-top: 1.5em;
+	}
+	@include tablet {
+		span {
+			justify-content: flex-start;
+		}
+	}
+}

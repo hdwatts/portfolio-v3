@@ -2,10 +2,12 @@
 
 import React from 'react'
 import Head from 'next/head'
-//import { Footer } from '../components/Footer'
 //import { globals } from '../globals'
-//import { Header } from '../components/Header'
-import 'bulma/css/bulma.css'
+import Header from '../components/header'
+import Footer from '../components/footer'
+import { config } from '@fortawesome/fontawesome-svg-core'
+import '@fortawesome/fontawesome-svg-core/styles.css' // Import the CSS
+config.autoAddCss = false
 import '../styles/main.scss'
 
 const globals = {
@@ -13,8 +15,9 @@ const globals = {
 }
 
 const App: React.FC = ({ Component, pageProps }: any) => (
-	<div className='container'>
+	<React.Fragment>
 		<Head>
+			{/* Google Analytics */}
 			{globals.googleAnalyticsId && (
 				<script
 					async
@@ -33,11 +36,11 @@ const App: React.FC = ({ Component, pageProps }: any) => (
 					}}
 				></script>
 			)}
-			<script
-				defer
-				src='https://use.fontawesome.com/releases/v5.14.0/js/all.js'
-			></script>
+
+			{/* Viewport */}
 			<meta name='viewport' content='width=device-width, initial-scale=1' />
+
+			{/* Favicons */}
 			<link
 				rel='icon'
 				type='image/png'
@@ -58,20 +61,21 @@ const App: React.FC = ({ Component, pageProps }: any) => (
 			<link rel='icon' href='/favicons/favicon-128x128.png' sizes='128x128' />
 			<link rel='icon' href='/favicons/favicon-192x192.png' sizes='192x192' />
 			<link rel='icon' href='/favicons/favicon-228x228.png' sizes='228x228' />
-
 			<link
 				rel='shortcut icon'
 				sizes='196x196'
 				href='/favicons/favicon-196x196.png'
 			/>
+
+			{/* Theme/Tile Colors */}
 			<meta name='msapplication-TileColor' content='#2e3440' />
 			<meta name='theme-color' content='#2e3440' />
 		</Head>
-		{/* <Header /> */}
-		<h1 className='title'>Hello World</h1>
+
+		<Header {...pageProps} />
 		<Component {...pageProps} />
-		{/* <Footer /> */}
-	</div>
+		{!pageProps.isFullscreen && <Footer {...pageProps} />}
+	</React.Fragment>
 )
 
 export default App

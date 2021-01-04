@@ -19,7 +19,6 @@ tags:
 authorPhoto: /img/profile.jpg
 bannerPhoto: /img/brook.jpg
 thumbnailPhoto: /img/brook.jpg
-canonicalUrl: https://devii.dev/blog/devii
 ---
 
 ![Whale](/img/docker-next-js/docker-whale.png)

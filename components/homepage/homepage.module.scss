@@ -1,0 +1,100 @@
+/** @format */
+@import 'bulma/sass/utilities/_all';
+@import '~/styles/nord';
+
+.homepageText {
+	text-shadow: 1px 1px $nord0;
+	@include mobile {
+		display: block;
+		text-align: center;
+		.subtitle {
+			margin-top: 1em !important;
+		}
+	}
+	svg {
+		filter: drop-shadow(1px 1px $nord0);
+	}
+	a {
+		color: $nord8;
+		&:hover {
+			color: $nord9;
+		}
+	}
+}
+
+.bgWrap {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100vw;
+	overflow: hidden;
+	z-index: -1;
+	svg {
+		height: 100vh !important;
+	}
+	img {
+		object-fit: cover;
+		height: 100vh !important;
+	}
+	> div {
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+}
+
+.enter {
+	opacity: 1;
+	z-index: 1;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.enterActive {
+	opacity: 1;
+	z-index: 1;
+}
+
+.exit {
+	opacity: 1;
+	z-index: 2;
+}
+
+.exitActive {
+	opacity: 0;
+	transition: opacity 1000ms ease-in;
+	z-index: 2;
+}
+
+.backgroundImage0 {
+	object-position: center bottom;
+}
+
+.backgroundImage1 {
+	object-position: center 95%;
+	@include mobile {
+		object-position: 40% 95%;
+	}
+}
+
+.backgroundImage2 {
+	object-position: left top;
+	@include mobile {
+		object-position: 35% top;
+	}
+}
+
+.backgroundImage3 {
+	object-position: center center;
+	@include mobile {
+		object-position: 65% center;
+	}
+}
+
+.line {
+	@include mobile {
+		display: block;
+	}
+}

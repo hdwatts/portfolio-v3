@@ -1,18 +1,17 @@
-FROM node:alpine as development
+FROM node:14-alpine as development
+
+RUN apk add --no-cache git
 
 RUN mkdir -p /app && chown node:node /app
 RUN mkdir -p /app/.next && chown node:node /app/.next
 RUN mkdir -p /app/node_modules && chown node:node /app/node_modules
-
-USER node
-
 WORKDIR /app
-
 COPY --chown=node:node package.json package-lock.json ./
 
+USER node
 RUN npm install
 
-FROM node:alpine as production
+FROM node:14-alpine as production
 
 ENV NODE_ENV production
 ENV PORT 3000

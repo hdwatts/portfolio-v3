@@ -1,34 +1,11 @@
 /** @format */
 import React from 'react'
 import glob from 'glob'
-import ReactMarkdown from 'react-markdown'
-import gfm from 'remark-gfm'
-// import { BlogPost } from '../../components/BlogPost'
-import { loadPost } from '../../loader'
-import Code from '../../components/code'
-import Heading from '../../components/elements/heading'
-import Content from '../../components/elements/content'
-import Table from '../../components/elements/table'
+import { loadPost, PostData } from '~/helpers/loader'
+import BlogPost from '~/components/blogpost'
 
-function Post(props: any) {
-	const { post } = props
-	// return <BlogPost post={post} />
-	return (
-		<div>
-			<Content>
-				<ReactMarkdown
-					plugins={[gfm]}
-					renderers={{
-						code: Code,
-						heading: Heading,
-						table: Table,
-					}}
-				>
-					{post.content}
-				</ReactMarkdown>
-			</Content>
-		</div>
-	)
+const Post: React.FC<{ post: PostData }> = ({ post }) => {
+	return <BlogPost post={post} />
 }
 
 export const getStaticPaths = () => {

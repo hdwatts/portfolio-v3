@@ -1,16 +1,17 @@
 /** @format */
 
+import glob from 'glob'
 import React from 'react'
-import ReactMarkdown from 'react-markdown/with-html'
-const markdown = ''
-class Index extends React.Component {
-	render() {
-		return (
-			<div>
-				<div>Welcome to the public landing page. A.k.a The Home Page!!</div>
-				<ReactMarkdown>{markdown}</ReactMarkdown>
-			</div>
-		)
-	}
-}
+
+import Homepage from '~/components/homepage'
+
+const Index: React.FC<{ numImages: number }> = ({ numImages }) => (
+	<Homepage numImages={numImages} />
+)
+
 export default Index
+
+export const getStaticProps = () => {
+	const imagePaths = glob.sync(`public/hero-images/*.jpg`)
+	return { props: { isFullscreen: true, numImages: imagePaths.length } }
+}

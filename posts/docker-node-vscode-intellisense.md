@@ -1,7 +1,7 @@
 ---
 title: Portfolio Project • Docker + Node + VSCode
 subtitle: 
-published: 
+published: true
 datePublished: 2020-12-29
 author: 
 tags: [tag1, tag2]
