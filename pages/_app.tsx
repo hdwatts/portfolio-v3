@@ -10,6 +10,8 @@ import '@fortawesome/fontawesome-svg-core/styles.css' // Import the CSS
 config.autoAddCss = false
 import '../styles/main.scss'
 
+import { DefaultSeo } from 'next-seo'
+
 const globals = {
 	googleAnalyticsId: null,
 }
@@ -71,7 +73,24 @@ const App: React.FC = ({ Component, pageProps, router }: any) => (
 			<meta name='msapplication-TileColor' content='#2e3440' />
 			<meta name='theme-color' content='#2e3440' />
 		</Head>
-
+		<DefaultSeo
+			titleTemplate='%s | Howard Dean Watts'
+			openGraph={{
+				type: 'website',
+				locale: 'en_IE',
+				url: 'https://www.hdwatts.com',
+				site_name: 'HDWatts',
+				title: 'Welcome',
+				description: "Heya! I'm Howard Dean Watts! Welcome to my website!",
+				images: [
+					{
+						url: '/meta/meta-img.png',
+						width: 1000,
+						height: 750,
+					},
+				],
+			}}
+		/>
 		<Header {...pageProps} />
 		<Component {...pageProps} key={router.route} />
 		{!pageProps.isFullscreen && <Footer {...pageProps} />}

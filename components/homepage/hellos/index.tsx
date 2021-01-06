@@ -52,13 +52,13 @@ const Hellos: React.FC<{}> = () => {
 		<div className={styles.hellos}>
 			<AnimatePresence>
 				<motion.span
-					key={index}
+					key={0}
 					initial={{ opacity: 0, y: '1em' }}
 					animate={{ opacity: 1, y: 0 }}
 					exit={{ opacity: 0 }}
 					transition={{ duration: 0.5 }}
 				>
-					{hellos[index]}
+					{hellos[0]}
 				</motion.span>
 			</AnimatePresence>
 		</div>
