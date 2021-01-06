@@ -11,10 +11,12 @@
 			margin-top: 1em !important;
 		}
 	}
-	a {
-		color: $nord8;
-		&:hover {
-			color: $nord9;
+	.line {
+		a {
+			color: $nord8 !important;
+			&:hover {
+				color: $nord9 !important;
+			}
 		}
 	}
 }
