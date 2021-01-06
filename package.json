@@ -7,7 +7,7 @@
 		"dev": "next",
 		"build": "next build",
 		"analyze": "ANALYZE=true npm run build",
-		"start": "next start",
+		"start": "next start -p $PORT",
 		"test": "jest",
 		"type-check": "tsc"
 	},
