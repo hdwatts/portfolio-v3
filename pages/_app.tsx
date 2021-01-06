@@ -84,7 +84,7 @@ const App: React.FC = ({ Component, pageProps, router }: any) => (
 				description: "Heya! I'm Howard Dean Watts! Welcome to my website!",
 				images: [
 					{
-						url: '/meta/meta-img.png',
+						url: 'meta/meta-img.png',
 						width: 1000,
 						height: 750,
 					},
