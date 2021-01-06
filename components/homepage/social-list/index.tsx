@@ -10,7 +10,7 @@ import {
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import styles from './social-list.module.scss'
-import { AnimationProps, motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import classnames from 'classnames'
 
 const socials = [

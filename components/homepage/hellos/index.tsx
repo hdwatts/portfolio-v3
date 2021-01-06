@@ -1,6 +1,6 @@
 /** @format */
 import { AnimatePresence, motion } from 'framer-motion'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
 import useInterval from '~/helpers/use-interval'
 

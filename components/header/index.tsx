@@ -7,11 +7,11 @@ import classnames from 'classnames'
 import Link from 'next/link'
 
 import Burger from './burger'
-import NavbarItem from './navbar-item'
+//import NavbarItem from './navbar-item'
 
 const Header: React.FC<{ isFullscreen: boolean }> = ({ isFullscreen }) => {
 	const [active, setActive] = useState(false)
-	const resetActive = () => setActive(false)
+	//const resetActive = () => setActive(false)
 	return (
 		<nav
 			key={`fullscreen-${isFullscreen}`}

@@ -6,16 +6,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { motion } from 'framer-motion'
 
-const list = {
-	visible: { opacity: 1 },
-	hidden: { opacity: 0 },
-}
-
-const item = {
-	visible: { opacity: 1, x: 0 },
-	hidden: { opacity: 0, x: -100 },
-}
-
 const Footer: React.FC<{}> = () => (
 	<motion.div
 		initial={{ opacity: 0, y: -10 }}
