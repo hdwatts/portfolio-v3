@@ -14,6 +14,7 @@ RUN npm install
 FROM node:14-alpine as production
 
 ENV NODE_ENV production
+ENV SKIP_SSL true
 ENV PORT 3000
 
 WORKDIR /app
@@ -25,6 +26,8 @@ RUN mkdir -p /app/.next && chown node:node /app/.next
 RUN npm run build
 
 RUN npx next telemetry disable
+
+RUN chown -R node:node /app/.next
 
 USER node
 

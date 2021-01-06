@@ -6,6 +6,7 @@ const sslRedirect = require('heroku-ssl-redirect').default
 
 const port = parseInt(process.env.PORT, 10) || 3000
 const dev = process.env.NODE_ENV !== 'production'
+const skipSSL = process.env.SKIP_SSL === 'true'
 const app = next({ dev })
 const handle = app.getRequestHandler()
 
@@ -13,7 +14,10 @@ app.prepare().then(() => {
 	const server = express()
 
 	// redirect to SSL
-	server.use(sslRedirect())
+
+	if (!skipSSL) {
+		server.use(sslRedirect())
+	}
 
 	server.all('*', (req, res) => {
 		return handle(req, res)

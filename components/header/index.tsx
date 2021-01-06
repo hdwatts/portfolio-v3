@@ -7,11 +7,12 @@ import classnames from 'classnames'
 import Link from 'next/link'
 
 import Burger from './burger'
+import NavbarItem from './navbar-item'
 //import NavbarItem from './navbar-item'
 
 const Header: React.FC<{ isFullscreen: boolean }> = ({ isFullscreen }) => {
 	const [active, setActive] = useState(false)
-	//const resetActive = () => setActive(false)
+	const resetActive = () => setActive(false)
 	return (
 		<nav
 			key={`fullscreen-${isFullscreen}`}
@@ -25,10 +26,10 @@ const Header: React.FC<{ isFullscreen: boolean }> = ({ isFullscreen }) => {
 				<Burger onClick={() => setActive(!active)} active={active} />
 			</div>
 
-			{/* <div className={classnames('navbar-menu', { 'is-active': active })}>
+			<div className={classnames('navbar-menu', { 'is-active': active })}>
 				<div className='navbar-start'>
 					<NavbarItem href='/about/' text='About' onClick={resetActive} />
-					<div className='navbar-item has-dropdown is-hoverable'>
+					{/*<div className='navbar-item has-dropdown is-hoverable'>
 						<Link href='/blog/'>
 							<a className='navbar-item' onClick={resetActive}>
 								Write ups
@@ -41,9 +42,9 @@ const Header: React.FC<{ isFullscreen: boolean }> = ({ isFullscreen }) => {
 								onClick={resetActive}
 							/>
 						</div>
-					</div>
+				</div>*/}
 				</div>
-		</div> */}
+			</div>
 		</nav>
 	)
 }
