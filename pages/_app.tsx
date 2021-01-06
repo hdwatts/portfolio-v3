@@ -75,13 +75,13 @@ const App: React.FC = ({ Component, pageProps, router }: any) => (
 		</Head>
 		<DefaultSeo
 			titleTemplate='%s | Howard Dean Watts'
+			description="Heya! I'm Howard Dean Watts! Welcome to my website!"
 			openGraph={{
 				type: 'website',
 				locale: 'en_IE',
 				url: 'https://www.hdwatts.com',
 				site_name: 'HDWatts',
 				title: 'Welcome',
-				description: "Heya! I'm Howard Dean Watts! Welcome to my website!",
 				images: [
 					{
 						url: `https://hdwatts.com${MetaImg.src}`,
