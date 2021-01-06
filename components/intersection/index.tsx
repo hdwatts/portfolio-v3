@@ -111,8 +111,8 @@ const IntersectionPlaceholder: React.FC<{
 					}
 					xlinkHref={lqip.src}
 					onLoad={onLoad}
-					width={src.width}
-					height={src.height}
+					width={fullHeight ? '100%' : src.width}
+					height={fullHeight ? '100%' : src.height}
 				/>
 			</svg>
 			{isIntersecting && clonedChildren}

@@ -11,6 +11,7 @@ import NavbarItem from './navbar-item'
 
 const Header: React.FC<{ isFullscreen: boolean }> = ({ isFullscreen }) => {
 	const [active, setActive] = useState(false)
+	const resetActive = () => setActive(false)
 	return (
 		<nav
 			key={`fullscreen-${isFullscreen}`}
@@ -20,41 +21,40 @@ const Header: React.FC<{ isFullscreen: boolean }> = ({ isFullscreen }) => {
 			})}
 		>
 			<div className='navbar-brand'>
-				<Link href='/'>
-					<a className='navbar-item'>
-						<FontAwesomeIcon icon={faCode} />
-						&nbsp;HDWatts
-					</a>
-				</Link>
+				<Brand />
 				<Burger onClick={() => setActive(!active)} active={active} />
 			</div>
 
-			<div className={classnames('navbar-menu', { 'is-active': active })}>
+			{/* <div className={classnames('navbar-menu', { 'is-active': active })}>
 				<div className='navbar-start'>
-					<NavbarItem href='/' text='Home' />
+					<NavbarItem href='/about/' text='About' onClick={resetActive} />
 					<div className='navbar-item has-dropdown is-hoverable'>
-						<a
-							className='navbar-link'
-							href='https://bulma.io/documentation/overview/start/'
-						>
-							Docs
-						</a>
+						<Link href='/blog/'>
+							<a className='navbar-item' onClick={resetActive}>
+								Write ups
+							</a>
+						</Link>
 						<div className='navbar-dropdown is-boxed'>
-							<NavbarItem href='/blog/' text='Portfolio' />
+							<NavbarItem
+								href='/blog/'
+								text='Portfolio'
+								onClick={resetActive}
+							/>
 						</div>
 					</div>
 				</div>
-
-				<div className='navbar-end'>
-					<div className='navbar-item'>
-						<div className='field is-grouped'>
-							<p className='control'></p>
-						</div>
-					</div>
-				</div>
-			</div>
+		</div> */}
 		</nav>
 	)
 }
 
 export default Header
+
+const Brand = () => (
+	<Link href='/'>
+		<a className='navbar-item'>
+			<FontAwesomeIcon icon={faCode} />
+			&nbsp;HDWatts
+		</a>
+	</Link>
+)

@@ -5,21 +5,46 @@ import BackgroundImages from './background-images'
 import Hellos from './hellos'
 import SocialList from './social-list'
 import styles from './homepage.module.scss'
+import Head from 'next/head'
+import { motion } from 'framer-motion'
+
+const variants = {
+	hidden: { y: '100vh' },
+	show: {
+		y: 0,
+		transition: {
+			duration: 0.75,
+			type: 'spring',
+			staggerChildren: 0.5,
+			when: 'beforeChildren',
+		},
+	},
+}
 
 const Homepage: React.FC<{ numImages: number }> = ({ numImages }) => (
 	<section
 		className={`hero is-primary fullscreen-overlay is-large is-fullheight-with-navbar`}
 	>
+		<Head>
+			<title>Welcome | Howard Dean Watts</title>
+		</Head>
 		<div className='hero-body' style={{ overflow: 'hidden' }}>
 			<BackgroundImages numImages={numImages} />
-			<div className={classnames('container', styles.homepageText)}>
-				<div className='block'>
+			<motion.div
+				className={classnames('container', styles.homepageText)}
+				initial='hidden'
+				animate='show'
+				variants={variants}
+			>
+				<motion.div className='block' variants={variants}>
 					<h1 className='title'>
 						<Hellos />
 					</h1>
+				</motion.div>
+				<motion.div className='block' variants={variants}>
 					<h2 className='subtitle'>I'm Howard Dean Watts</h2>
-				</div>
-				<div className='block'>
+				</motion.div>
+				<motion.div className='block' variants={variants}>
 					<span className={styles.line}>Lead Software Engineer</span>
 					<span className='vertical-divider'>|</span>
 					<span className={styles.line}>
@@ -28,9 +53,9 @@ const Homepage: React.FC<{ numImages: number }> = ({ numImages }) => (
 					</span>
 					<span className='vertical-divider'>|</span>
 					<span className={styles.line}>New York, NY</span>
-				</div>
+				</motion.div>
 				<SocialList />
-			</div>
+			</motion.div>
 		</div>
 	</section>
 )

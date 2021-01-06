@@ -3,16 +3,13 @@
 @import '~/styles/nord';
 
 .homepageText {
-	text-shadow: 1px 1px $nord0;
+	text-shadow: 1.5px 1.5px $nord0;
 	@include mobile {
 		display: block;
 		text-align: center;
 		.subtitle {
 			margin-top: 1em !important;
 		}
-	}
-	svg {
-		filter: drop-shadow(1px 1px $nord0);
 	}
 	a {
 		color: $nord8;
@@ -29,9 +26,11 @@
 	height: 100vh;
 	width: 100vw;
 	overflow: hidden;
-	z-index: -1;
 	svg {
 		height: 100vh !important;
+		image {
+			object-fit: cover;
+		}
 	}
 	img {
 		object-fit: cover;
@@ -42,30 +41,6 @@
 		left: 0;
 		top: 0;
 	}
-}
-
-.enter {
-	opacity: 1;
-	z-index: 1;
-	position: absolute;
-	left: 0;
-	top: 0;
-}
-
-.enterActive {
-	opacity: 1;
-	z-index: 1;
-}
-
-.exit {
-	opacity: 1;
-	z-index: 2;
-}
-
-.exitActive {
-	opacity: 0;
-	transition: opacity 1000ms ease-in;
-	z-index: 2;
 }
 
 .backgroundImage0 {

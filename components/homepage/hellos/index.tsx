@@ -1,6 +1,6 @@
 /** @format */
-import React, { useState } from 'react'
-import { CSSTransition, TransitionGroup } from 'react-transition-group'
+import { AnimatePresence, motion } from 'framer-motion'
+import React, { useEffect, useState } from 'react'
 
 import useInterval from '~/helpers/use-interval'
 
@@ -36,14 +36,32 @@ const hellos = [
 
 const Hellos: React.FC<{}> = () => {
 	const [index, setIndex] = useState<number>(0)
-	useInterval(() => setIndex(index + 1 >= hellos.length ? 0 : index + 1), 3000)
+	const [firstRun, setFirstRun] = useState<boolean>(true)
+	useInterval(
+		() => {
+			if (firstRun) {
+				setFirstRun(false)
+			} else {
+				setIndex(index + 1 >= hellos.length ? 0 : index + 1)
+			}
+		},
+		firstRun ? 8000 : 3000,
+	)
 
 	return (
-		<TransitionGroup className={styles.hellos}>
-			<CSSTransition key={index} timeout={500} classNames={{ ...styles }}>
-				<span>{hellos[index]}</span>
-			</CSSTransition>
-		</TransitionGroup>
+		<div className={styles.hellos}>
+			<AnimatePresence>
+				<motion.span
+					key={index}
+					initial={{ opacity: 0, y: '1em' }}
+					animate={{ opacity: 1, y: 0 }}
+					exit={{ opacity: 0 }}
+					transition={{ duration: 0.5 }}
+				>
+					{hellos[index]}
+				</motion.span>
+			</AnimatePresence>
+		</div>
 	)
 }
 

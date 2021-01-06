@@ -14,7 +14,7 @@ const globals = {
 	googleAnalyticsId: null,
 }
 
-const App: React.FC = ({ Component, pageProps }: any) => (
+const App: React.FC = ({ Component, pageProps, router }: any) => (
 	<React.Fragment>
 		<Head>
 			{/* Google Analytics */}
@@ -73,7 +73,7 @@ const App: React.FC = ({ Component, pageProps }: any) => (
 		</Head>
 
 		<Header {...pageProps} />
-		<Component {...pageProps} />
+		<Component {...pageProps} key={router.route} />
 		{!pageProps.isFullscreen && <Footer {...pageProps} />}
 	</React.Fragment>
 )

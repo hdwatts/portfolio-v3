@@ -1,7 +1,7 @@
 /** @format */
 
 .navbar {
-	transition: all 250ms ease-in;
+	transition: all 500ms ease-in;
 }
 
 .navbar-menu {
@@ -11,13 +11,13 @@
 	overflow: hidden;
 	max-height: 0;
 	opacity: 0;
-	transition: max-height 250ms ease-in, opacity 250ms ease-in;
+	transition: max-height 500ms ease-in, opacity 500ms ease-in;
 }
 
 .navbar-menu.is-active {
 	max-height: 30vh;
 	opacity: 1;
-	transition: max-height 250ms ease-in, opacity 250ms ease-in;
+	transition: max-height 500ms ease-in, opacity 500ms ease-in;
 }
 
 .fullscreen-overlay {
@@ -45,7 +45,10 @@
 	.fullscreen-overlay {
 		.navbar-item,
 		.navbar-link {
-			color: $grey-light !important;
+			color: $grey-lightest !important;
+			&:hover {
+				color: $grey-lighter !important;
+			}
 		}
 		.navbar-link {
 			&::after {

@@ -16,19 +16,3 @@
 		}
 	}
 }
-
-.enter {
-	opacity: 0;
-	transform: translate3d(0, 100%, 0);
-}
-.exit,
-.enterActive {
-	opacity: 1;
-	transform: translate3d(0, 0, 0);
-	transition: opacity 500ms ease-in, transform 500ms ease-in;
-}
-.exitActive {
-	opacity: 0;
-	transform: translate3d(0, -100%, 0);
-	transition: opacity 500ms ease-in, transform 500ms ease-in;
-}

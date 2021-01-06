@@ -1,11 +1,12 @@
 /** @format */
 
 import React, { useState } from 'react'
-import { CSSTransition, TransitionGroup } from 'react-transition-group'
 import Img from 'react-optimized-image'
 import IntersectionPlaceholder from '~/components/intersection'
 import useInterval from '~/helpers/use-interval'
 import styles from './homepage.module.scss'
+
+import { AnimatePresence, motion } from 'framer-motion'
 
 const BackgroundImages: React.FC<{ numImages: number }> = ({ numImages }) => {
 	const [index, setIndex] = useState<number>(
@@ -14,8 +15,14 @@ const BackgroundImages: React.FC<{ numImages: number }> = ({ numImages }) => {
 	useInterval(() => setIndex(index + 1 >= numImages ? 0 : index + 1), 10000)
 
 	return (
-		<TransitionGroup className={styles.bgWrap}>
-			<CSSTransition key={index} timeout={1000} classNames={{ ...styles }}>
+		<AnimatePresence initial={false}>
+			<motion.div
+				key={index}
+				className={styles.bgWrap}
+				animate={{ opacity: 1, zIndex: -2 }}
+				transition={{ duration: 1 }}
+				exit={{ opacity: 0, zIndex: -1 }}
+			>
 				<IntersectionPlaceholder
 					src={require(`~/public/hero-images/${index}.jpg`)}
 					lqip={require(`~/public/hero-images/${index}.jpg?lqip`)}
@@ -27,8 +34,8 @@ const BackgroundImages: React.FC<{ numImages: number }> = ({ numImages }) => {
 						className={styles[`backgroundImage${index}`]}
 					/>
 				</IntersectionPlaceholder>
-			</CSSTransition>
-		</TransitionGroup>
+			</motion.div>
+		</AnimatePresence>
 	)
 }
 

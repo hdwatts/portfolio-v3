@@ -1,14 +1,25 @@
 /** @format */
 
 @import 'bulma/sass/utilities/_all';
+@import '~/styles/nord';
 
 .socialList {
 	@include mobile {
 		margin-top: 1.5em;
+		justify-content: center !important;
+		width: 100vw;
+		margin-left: -1.5rem;
+		margin-right: -1.5rem;
 	}
-	@include tablet {
-		span {
-			justify-content: flex-start;
+	a {
+		color: $nord0;
+		&:hover {
+			color: $nord3;
 		}
 	}
+}
+
+.tag {
+	text-shadow: none;
+	padding: 0 0.75em;
 }
