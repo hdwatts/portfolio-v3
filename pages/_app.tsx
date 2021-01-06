@@ -9,7 +9,7 @@ import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css' // Import the CSS
 config.autoAddCss = false
 import '../styles/main.scss'
-
+import MetaImg from '~/public/meta/meta-img.png'
 import { DefaultSeo } from 'next-seo'
 
 const globals = {
@@ -84,7 +84,7 @@ const App: React.FC = ({ Component, pageProps, router }: any) => (
 				description: "Heya! I'm Howard Dean Watts! Welcome to my website!",
 				images: [
 					{
-						url: 'meta/meta-img.png',
+						url: MetaImg.src,
 						width: 1000,
 						height: 750,
 					},
