@@ -58,7 +58,7 @@ const Hellos: React.FC<{}> = () => {
 					exit={{ opacity: 0 }}
 					transition={{ duration: 0.5 }}
 				>
-					{hellos[0]}
+					{hellos[index]}
 				</motion.span>
 			</AnimatePresence>
 		</div>
