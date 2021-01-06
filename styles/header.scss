@@ -22,7 +22,7 @@
 
 .fullscreen-overlay {
 	&.navbar:not(.is-active) {
-		background-color: $transparent-overlay !important;
+		background-color: rgba(0, 0, 0, 0) !important;
 		.navbar-brand {
 			> .navbar-item,
 			> .navbar-burger {

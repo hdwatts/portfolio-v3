@@ -15,27 +15,30 @@ const BackgroundImages: React.FC<{ numImages: number }> = ({ numImages }) => {
 	useInterval(() => setIndex(index + 1 >= numImages ? 0 : index + 1), 10000)
 
 	return (
-		<AnimatePresence initial={false}>
-			<motion.div
-				key={index}
-				className={styles.bgWrap}
-				animate={{ opacity: 1, zIndex: -2 }}
-				transition={{ duration: 1 }}
-				exit={{ opacity: 0, zIndex: -1 }}
-			>
-				<IntersectionPlaceholder
-					src={require(`~/public/hero-images/${index}.jpg`)}
-					lqip={require(`~/public/hero-images/${index}.jpg?lqip`)}
-					fullHeight
+		<React.Fragment>
+			<div className={styles.transparentOverlay}></div>
+			<AnimatePresence initial={false}>
+				<motion.div
+					key={index}
+					className={styles.bgWrap}
+					animate={{ opacity: 1, zIndex: -3 }}
+					transition={{ duration: 1 }}
+					exit={{ opacity: 0, zIndex: -2 }}
 				>
-					<Img
+					<IntersectionPlaceholder
 						src={require(`~/public/hero-images/${index}.jpg`)}
-						webp
-						className={styles[`backgroundImage${index}`]}
-					/>
-				</IntersectionPlaceholder>
-			</motion.div>
-		</AnimatePresence>
+						lqip={require(`~/public/hero-images/${index}.jpg?lqip`)}
+						fullHeight
+					>
+						<Img
+							src={require(`~/public/hero-images/${index}.jpg`)}
+							webp
+							className={styles[`backgroundImage${index}`]}
+						/>
+					</IntersectionPlaceholder>
+				</motion.div>
+			</AnimatePresence>
+		</React.Fragment>
 	)
 }
 

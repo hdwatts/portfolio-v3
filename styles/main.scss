@@ -4,7 +4,7 @@
 
 .fullscreen-overlay {
 	&:not(.navbar) {
-		background-color: $transparent-overlay !important;
+		background-color: rgba(0, 0, 0, 0) !important;
 	}
 }
 
