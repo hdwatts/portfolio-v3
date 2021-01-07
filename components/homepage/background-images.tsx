@@ -9,7 +9,8 @@ import styles from './homepage.module.scss'
 import { AnimatePresence, motion } from 'framer-motion'
 
 const BackgroundImages: React.FC<{ numImages: number }> = ({ numImages }) => {
-	const [index, setIndex] = useState<number>(
+	let index = 2
+	const [_index, setIndex] = useState<number>(
 		Math.floor(Math.random() * numImages),
 	)
 	useInterval(() => setIndex(index + 1 >= numImages ? 0 : index + 1), 10000)
