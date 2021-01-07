@@ -24,7 +24,7 @@ module.exports = {
 					'./node_modules/@fortawesome/**/*.js',
 				],
 				defaultExtractor: content => content.match(/[\w-/:]+(?<!:)/g) || [],
-				safelist: ['body', 'font-family'],
+				safelist: ['body', 'font-family', /backgroundImage\d+/],
 			},
 		],
 	],
