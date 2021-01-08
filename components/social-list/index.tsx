@@ -85,8 +85,16 @@ const mainItemVariants = {
 }
 
 const hoverVariants = {
-	hidden: { maxWidth: 0, opacity: 0, overflow: 'hidden' },
+	hidden: {
+		maxWidth: 0,
+		paddingLeft: 0,
+		paddingRight: 0,
+		opacity: 0,
+		overflow: 'hidden',
+	},
 	show: {
+		paddingLeft: [0, '0.75em', '0.75em', 0],
+		paddingRight: [0, '0.75em', '0.75em', 0],
 		maxWidth: [0, 200, 200, 0],
 		opacity: [0, 1, 1, 0],
 		overflow: 'hidden',
