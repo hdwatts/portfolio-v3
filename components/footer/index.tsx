@@ -20,7 +20,7 @@ const Footer: React.FC<{}> = () => (
 						<strong>Created</strong> by{' '}
 						<a href='https://hdwatts.com'>Howard Dean Watts</a>. The source code
 						for this portfolio can be found on my{' '}
-						<a href='http://github.com/hdwatts/mit'>
+						<a href='http://github.com/hdwatts/portfolio-v3'>
 							GitHub <FontAwesomeIcon icon={faGithub} />
 						</a>
 						.
