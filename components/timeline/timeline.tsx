@@ -1,20 +1,33 @@
 /** @format */
 
+import { motion } from 'framer-motion'
 import React, { PropsWithChildren } from 'react'
 
 import styles from './timeline.module.scss'
 
-const EndOfScrollContainer: React.FC<{}> = ({}) => (
-	<div className={styles.endOfScroll}></div>
-)
-
 const VerticalTimeline: React.FC<PropsWithChildren<{}>> = ({ children }) => {
 	return (
-		<div className={styles.timeline}>
+		<motion.div
+			className={styles.timeline}
+			initial='initial'
+			animate='animate'
+			variants={delayChildren}
+		>
 			{children}
-			<EndOfScrollContainer />
-		</div>
+		</motion.div>
 	)
 }
 
 export default VerticalTimeline
+
+const delayChildren = {
+	initial: {
+		opacity: 0,
+	},
+	animate: {
+		opacity: 1,
+		transition: {
+			duration: 2,
+		},
+	},
+}
