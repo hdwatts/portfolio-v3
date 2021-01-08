@@ -16,7 +16,7 @@ const About: React.FC<{}> = () => (
 		<div className='content'>
 			<PoolImage />
 			<div className='block'>
-				<h1>Hi! I'm Howard Dean Watts</h1>
+				<h1>Hi! I'm Howard Watts</h1>
 				<motion.p initial='initial' animate='animate' variants={speedText}>
 					But feel free to call me Dean! I am a software developer based in New
 					York and work with Chronograph Private Equity. I specialize in web
