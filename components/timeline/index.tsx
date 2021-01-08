@@ -29,8 +29,9 @@ const HdwattsTimeline: React.FC<{}> = () => (
 						document to only 1 minute
 					</li>
 					<li>
-						Sole creator of the C# based xConnect Excel Plugin which securely
-						handles data ingestion and digestion for clients via custom formulas
+						Sole creator and maintainer of the C# based xConnect Excel Plugin
+						which securely handles data ingestion and digestion for clients via
+						custom formulas
 					</li>
 					<li>
 						Worked with the latest web based technology such as React and Redux
@@ -103,7 +104,7 @@ const HdwattsTimeline: React.FC<{}> = () => (
 					<li>
 						Moved the entire Application and Admissions process at McDonogh
 						School to an online and paperless system I constructed. System
-						handles 800-1000 applicants a year.
+						handles 800-1,000 applicants a year.
 					</li>
 					<li>
 						Developed online billing system for McDonogh School’s Business

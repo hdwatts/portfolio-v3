@@ -22,8 +22,7 @@ const About: React.FC<{}> = () => (
 					York and work with Chronograph Private Equity. I specialize in web
 					applications and have built apps with React, Node.js, .NET, Rails,
 					ColdFusion, and Perl in professional environments. When I'm not
-					coding, I love to travel, eat good food, and play guitar. Feel free to
-					reach out to me anytime on the below platforms.
+					coding, I love to travel, eat good food, and play guitar.
 				</motion.p>
 			</div>
 			<div className='block'>
