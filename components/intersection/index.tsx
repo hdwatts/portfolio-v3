@@ -27,6 +27,7 @@ const IntersectionPlaceholder: React.FC<{
 	onLoad?: () => void
 	placeholderClassName?: string
 	fullHeight?: boolean
+	isRounded?: boolean
 }> = ({
 	src,
 	lqip,
@@ -38,6 +39,7 @@ const IntersectionPlaceholder: React.FC<{
 	onLoad,
 	placeholderClassName,
 	fullHeight,
+	isRounded,
 }) => {
 	const [loaded, setLoaded] = useState(false)
 	const { ref, isIntersecting } = useIntersect(observerOptions, true)
@@ -75,6 +77,12 @@ const IntersectionPlaceholder: React.FC<{
 			}
 		}
 	}, [])
+	const svgClassNames = loaded
+		? `${styles.svgImageDisable} ${styles.svgImage} ${
+				stdDeviation === '0' ? styles.skipAnim : ''
+		  }`
+		: styles.svgImage
+
 	return (
 		<div ref={ref} className={`${className} ${styles.container}`} style={style}>
 			<svg
@@ -98,21 +106,39 @@ const IntersectionPlaceholder: React.FC<{
 							</feComponentTransfer>
 						)}
 					</filter>
+					{isRounded && (
+						<rect
+							id='rect'
+							x='0%'
+							y='0%'
+							width='100%'
+							height='100%'
+							rx='290486'
+						/>
+					)}
+					{isRounded && (
+						<clipPath id='clip'>
+							<use href='#rect' />
+						</clipPath>
+					)}
 				</defs>
+				{isRounded && (
+					<use
+						href='#rect'
+						className={svgClassNames}
+						strokeWidth='0'
+						stroke='black'
+					/>
+				)}
 				<image
 					preserveAspectRatio='none'
 					filter={`url(#${blurId})`}
-					className={
-						loaded
-							? `${styles.svgImageDisable} ${styles.svgImage} ${
-									stdDeviation === '0' ? styles.skipAnim : ''
-							  }`
-							: styles.svgImage
-					}
+					className={svgClassNames}
 					xlinkHref={lqip.src}
 					onLoad={onLoad}
 					width={fullHeight ? '100%' : src.width}
 					height={fullHeight ? '100%' : src.height}
+					clipPath={isRounded ? 'url(#clip)' : undefined}
 				/>
 			</svg>
 			{isIntersecting && clonedChildren}

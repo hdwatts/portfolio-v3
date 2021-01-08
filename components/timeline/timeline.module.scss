@@ -1,0 +1,148 @@
+/** @format */
+@import 'bulma/sass/utilities/_all';
+@import '~/styles/nord';
+
+.timeline {
+	width: 95%;
+	max-width: 1170px;
+	margin: 0 auto;
+	position: relative;
+	padding: 2em 0;
+
+	* {
+		box-sizing: border-box;
+	}
+
+	&::after {
+		/* clearfix */
+		content: '';
+		display: table;
+		clear: both;
+	}
+
+	&::before {
+		/* this is the vertical line */
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 18px;
+		height: 100%;
+		width: 4px;
+		background: $nord3;
+	}
+
+	.timelineIcon {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		background: $nord5;
+		box-shadow: 0 0 0 4px $nord5, inset 0 2px 0 rgba(0, 0, 0, 0.08),
+			0 3px 0 4px rgba(0, 0, 0, 0.05);
+		svg {
+			display: block;
+			width: 24px;
+			height: 24px;
+			position: relative;
+			left: 50%;
+			top: 50%;
+			margin-left: -12px;
+			margin-top: -10px;
+		}
+	}
+	.timelineElement {
+		position: relative;
+		margin: 4em 0;
+
+		> div {
+			min-height: 1px;
+		}
+
+		&:after {
+			content: '';
+			display: table;
+			clear: both;
+		}
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		.timelineElementInner {
+			> :first-child {
+				margin-top: 0;
+			}
+			> :last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	.timelineContent {
+		position: relative;
+		margin-left: 60px;
+		border-radius: 0.25em;
+		padding: 1em;
+		background: $nord4;
+		box-shadow: 0 3px 0 rgba(0, 0, 0, 0.08);
+
+		&:after {
+			content: '';
+			display: table;
+			clear: both;
+		}
+
+		p,
+		.timelineDate {
+			font-weight: 500;
+		}
+		.timelineSkillsContainer {
+			display: flex;
+			justify-content: space-between;
+			@include mobile {
+				flex-direction: column;
+			}
+			.timelineDate {
+				display: inline-block;
+				padding: 0.8em 0;
+				opacity: 0.7;
+			}
+		}
+		.timelineArrow {
+			content: '';
+			position: absolute;
+			top: 16px;
+			right: 100%;
+			height: 0;
+			width: 0;
+			border: 7px solid transparent;
+			border-right: 7px solid $nord4;
+		}
+	}
+	@include mobile {
+		.timelineElement {
+			margin: 5 0;
+
+			&:first-child {
+				margin-top: 0;
+			}
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+.endOfScroll {
+	display: block;
+	background: transparent;
+	width: 100%;
+	height: 5px;
+}

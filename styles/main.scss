@@ -14,3 +14,31 @@
 		display: none;
 	}
 }
+
+@keyframes add-box-shadow {
+	from {
+		box-shadow: none;
+	}
+	to {
+		box-shadow: 0 0 0 5px rgb(94, 129, 172), 0 0 0 10px rgb(129, 161, 193),
+			0 0 0 15px rgb(216, 222, 233), 0 0 0 20px rgb(229, 233, 240);
+	}
+}
+@keyframes fade-in {
+	from {
+		opacity: 0;
+		filter: blur(18px);
+	}
+	to {
+		opacity: 1;
+		filter: blur(0px);
+	}
+}
+
+.about-image-border {
+	box-shadow: 0 0 0 5px rgb(94, 129, 172), 0 0 0 10px rgb(129, 161, 193),
+		0 0 0 15px rgb(216, 222, 233), 0 0 0 20px rgb(229, 233, 240);
+
+	transition: box-shadow 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+	animation: add-box-shadow 370ms linear, fade-in 370ms linear !important;
+}

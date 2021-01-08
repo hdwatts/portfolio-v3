@@ -48,25 +48,31 @@ const variants = {
 	},
 }
 
-const SocialList: React.FC<{}> = () => {
-	return (
-		<motion.div
-			className={classnames(
-				styles.socialList,
-				'field',
-				'is-grouped',
-				'is-grouped-multiline',
-			)}
-			variants={variants}
-		>
-			{socials.map(social => (
-				<SocialListItem key={social.link} {...social} />
-			))}
-		</motion.div>
-	)
-}
+const SocialList: React.FC<{}> = () => (
+	<motion.div
+		className={classnames(
+			styles.socialList,
+			'field',
+			'is-grouped',
+			'is-grouped-multiline',
+		)}
+		variants={variants}
+	>
+		{socials.map(social => (
+			<SocialListItem key={social.link} {...social} animate />
+		))}
+	</motion.div>
+)
 
 export default SocialList
+
+export const SocialListFooter: React.FC<{}> = () => (
+	<div className={classnames('field', 'is-grouped', 'is-grouped-multiline')}>
+		{socials.map(social => (
+			<SocialListItem key={social.link} {...social} animate={false} />
+		))}
+	</div>
+)
 
 const mainItemVariants = {
 	hidden: { opacity: 0.5 },
@@ -108,18 +114,28 @@ const SocialListItem: React.FC<{
 	link: string
 	icon: IconDefinition
 	message: string
-}> = ({ link, icon, message }) => (
-	<motion.div className='control' variants={mainItemVariants}>
+	animate: boolean
+}> = ({ link, icon, message, animate }) => (
+	<motion.div
+		className='control'
+		variants={animate ? mainItemVariants : undefined}
+	>
 		<div className='tags has-addons'>
-			<motion.a href={link} className='icon tag' variants={hoverDarkVaraints}>
+			<motion.a
+				href={link}
+				className='icon tag'
+				variants={animate ? hoverDarkVaraints : undefined}
+			>
 				<FontAwesomeIcon icon={icon} />
 			</motion.a>
-			<motion.span
-				className={classnames('tag', 'is-dark')}
-				variants={hoverVariants}
-			>
-				<span className={styles.tag}>{message}</span>
-			</motion.span>
+			{animate && (
+				<motion.span
+					className={classnames('tag', 'is-dark')}
+					variants={hoverVariants}
+				>
+					<span className={styles.tag}>{message}</span>
+				</motion.span>
+			)}
 		</div>
 	</motion.div>
 )
