@@ -13,10 +13,10 @@ import MetaImg from '~/public/meta/meta-img.png'
 import { DefaultSeo } from 'next-seo'
 
 const globals = {
-	googleAnalyticsId: null,
+	googleAnalyticsId: process.env.GOOGLE_ANALYTICS_ID,
 }
 
-const App: React.FC = ({ Component, pageProps, router }: any) => (
+const App: React.FC = ({ Component, pageProps }: any) => (
 	<React.Fragment>
 		<Head>
 			{/* Google Analytics */}
@@ -92,7 +92,9 @@ const App: React.FC = ({ Component, pageProps, router }: any) => (
 			}}
 		/>
 		<Header {...pageProps} />
-		<Component {...pageProps} key={router.route} />
+
+		<Component {...pageProps} />
+
 		{!pageProps.isFullscreen && <Footer {...pageProps} />}
 	</React.Fragment>
 )
