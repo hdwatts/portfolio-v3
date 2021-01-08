@@ -7,6 +7,7 @@ import SocialList from '~/components/social-list'
 import styles from './homepage.module.scss'
 import Head from 'next/head'
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 
 const variants = {
 	hidden: { y: '100vh' },
@@ -54,7 +55,22 @@ const Homepage: React.FC<{ numImages: number }> = ({ numImages }) => (
 					<span className='vertical-divider'>|</span>
 					<span className={styles.line}>New York, NY</span>
 				</motion.div>
-				<SocialList />
+				<motion.div
+					className={classnames('block buttons', styles.buttons)}
+					variants={variants}
+				>
+					<Link href='/about/'>
+						<a className={classnames('button is-inverted', styles.button)}>
+							<strong>Learn More</strong>
+						</a>
+					</Link>
+					{/*<Link href='/blog/'>
+						<a className={classnames('button is-inverted', styles.button)}>
+							<strong>Blog</strong>
+						</a>
+</Link>*/}{' '}
+					<SocialList />
+				</motion.div>
 			</motion.div>
 		</div>
 	</section>

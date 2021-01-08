@@ -4,6 +4,26 @@
 
 .homepageText {
 	text-shadow: 1.5px 1.5px $nord0;
+	.buttons {
+		justify-content: flex-start;
+		align-items: baseline;
+		@include mobile {
+			justify-content: center !important;
+		}
+		.button {
+			display: block;
+			text-shadow: none !important;
+			color: $nord4;
+			background-color: transparent;
+			transition: all 250ms;
+			&:hover {
+				border-color: $nord6;
+				color: $nord6;
+				background-color: rgba(255, 255, 255, 0.1);
+			}
+			margin-right: calc(24px + 0.75rem) !important;
+		}
+	}
 	@include mobile {
 		display: block;
 		text-align: center;
