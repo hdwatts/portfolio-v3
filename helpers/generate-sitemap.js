@@ -15,11 +15,11 @@ const glob = require('glob')
 									.replace('pages', '')
 									.replace('.tsx', '')
 									.replace('.md', '')
-								const route = path === '/index' ? '' : path
+									.replace('/index', '')
 
 								return `
                         <url>
-                            <loc>${`https://hdwatts.com${route}`}</loc>
+                            <loc>${`https://hdwatts.com${path}`}</loc>
                         </url>
                     `
 							})
@@ -27,14 +27,14 @@ const glob = require('glob')
 							${posts
 								.map(page => {
 									const path = page
-										.replace('posts', 'blog')
+										.replace('posts', '/blog')
 										.replace('.tsx', '')
 										.replace('.md', '')
 										.replace('/index', '')
 
 									return `
                         <url>
-                            <loc>${`https://hdwatts.com${route}`}</loc>
+                            <loc>${`https://hdwatts.com${path}`}</loc>
                         </url>
                     `
 								})
