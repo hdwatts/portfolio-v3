@@ -8,7 +8,10 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 
 module.exports = withPlugins([withOptimizedImages, withBundleAnalyzer], {
 	trailingSlash: true,
-	webpack: config => {
+	webpack: (config, { isServer }) => {
+		if (isServer) {
+			require('./helpers/generate-sitemap')
+		}
 		config.module.rules.push({
 			test: /\.md$/,
 			use: 'raw-loader',
