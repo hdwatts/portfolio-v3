@@ -20,6 +20,10 @@ const App: React.FC = ({ Component, pageProps }: any) => (
 	<React.Fragment>
 		<Head>
 			{/* Google Analytics */}
+			<meta
+				name='google-site-verification'
+				content='RV74xCgXi9l9huzyXSRsZOyuc4oqN7y5NCKnvXej6kA'
+			/>
 			{globals.googleAnalyticsId && (
 				<script
 					async
