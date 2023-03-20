@@ -47,10 +47,15 @@ const Homepage: React.FC<{ numImages: number }> = ({ numImages }) => (
 				</motion.div>
 				<motion.div className='block' variants={variants}>
 					<span className={styles.line}>Lead Software Engineer</span>
-					<span className='vertical-divider'>|</span>
+					<span className='vertical-divider'>+</span>
 					<span className={styles.line}>
 						Founding Member of{' '}
 						<a href='https://www.chronograph.pe'>Chronograph.pe</a>
+					</span>
+					<span className='vertical-divider'>|</span>
+					<span className={styles.line}>
+						Creator of{' '}
+						<a href='https://www.wordtree.app'>WordTree.app</a>
 					</span>
 					<span className='vertical-divider'>|</span>
 					<span className={styles.line}>New York, NY</span>
