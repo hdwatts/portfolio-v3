@@ -4,7 +4,6 @@ import { motion } from 'framer-motion'
 import Head from 'next/head'
 import React from 'react'
 import Image from 'next/image'
-import IntersectionPlaceholder from '~/components/intersection'
 import Timeline from '~/components/timeline'
 import { speedText } from '~/helpers/animation-variants'
 

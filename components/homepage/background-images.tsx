@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react'
 import Image from 'next/image'
-import IntersectionPlaceholder from '~/components/intersection'
 import useInterval from '~/helpers/use-interval'
 import styles from './homepage.module.scss'
 
