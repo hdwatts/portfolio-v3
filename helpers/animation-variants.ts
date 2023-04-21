@@ -1,6 +1,6 @@
 /** @format */
 
-import { Variants } from 'framer-motion/types/types'
+import { Variants } from 'framer-motion'
 
 export const speedText: Variants = {
 	initial: { opacity: 0, y: -10 },
