@@ -1,6 +1,6 @@
 /** @format */
 import React from 'react'
-import glob from 'glob'
+import { globSync } from 'glob'
 import { loadPost, PostData } from '~/helpers/loader'
 import BlogPost from '~/components/blogpost'
 
@@ -9,7 +9,7 @@ const Post: React.FC<{ post: PostData }> = ({ post }) => {
 }
 
 export const getStaticPaths = () => {
-	const blogs = glob.sync('./posts/*.md')
+	const blogs = globSync('./posts/*.md')
 	const slugs = blogs.map((file: string) => {
 		const popped = file.split('/').pop()
 		if (!popped) throw new Error(`Invalid blog path: ${file}`)

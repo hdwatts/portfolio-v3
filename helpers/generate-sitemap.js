@@ -1,12 +1,12 @@
 /** @format */
 
 const fs = require('fs')
-const glob = require('glob')
+const { globSync } = require('glob')
 
 const loadMarkdownFiles = async path => {}
 
 const loadBlogPosts = async () => {
-	const blogPaths = glob.sync(`posts/*.md`)
+	const blogPaths = globSync(`posts/*.md`)
 	const postDataList = blogPaths.map(blogPath => {
 		const modPath = blogPath.slice(blogPath.indexOf(`posts/`) + 6)
 		return `posts/${modPath}`
@@ -16,7 +16,7 @@ const loadBlogPosts = async () => {
 
 ;(async () => {
 	// Ignore Next.js specific files (e.g., _app.js) and API routes.
-	const pages = glob.sync('pages/**/+([a-z]).tsx')
+	const pages = globSync('pages/**/+([a-z]).tsx')
 	const posts = await loadBlogPosts()
 
 	const sitemap = `<?xml version="1.0" encoding="UTF-8"?>

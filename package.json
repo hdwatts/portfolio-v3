@@ -44,7 +44,8 @@
 		"react-markdown": "^5.0.3",
 		"react-syntax-highlighter": "^15.4.3",
 		"remark-gfm": "^1.0.0",
-		"sass": "^1.32.0"
+		"sass": "^1.32.0",
+		"sharp": "^0.32.0"
 	},
 	"devDependencies": {
 		"@fullhuman/postcss-purgecss": "^3.1.3",

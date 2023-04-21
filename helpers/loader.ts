@@ -1,7 +1,7 @@
 /** @format */
 
 import matter from 'gray-matter'
-import glob from 'glob'
+import { globSync } from 'glob'
 const globals = {
 	url: '/blog',
 }
@@ -61,7 +61,7 @@ export const mdToPost = (file: RawFile): PostData => {
 }
 
 export const loadMarkdownFiles = async (path: string): Promise<RawFile[]> => {
-	const blogPaths = glob.sync(`posts/${path}`)
+	const blogPaths = globSync(`posts/${path}`)
 	const postDataList: RawFile[] = await Promise.all(
 		blogPaths.map((blogPath: string) => {
 			const modPath = blogPath.slice(blogPath.indexOf(`posts/`) + 6)
@@ -77,7 +77,9 @@ export const loadPost = async (path: string): Promise<PostData> => {
 }
 
 export const loadBlogPosts = async (): Promise<PostData[]> => {
-	return await (await loadMarkdownFiles(`*.md`))
+	return await (
+		await loadMarkdownFiles(`*.md`)
+	)
 		.map(mdToPost)
 		.filter(p => p.published)
 		.sort((a, b) => (b.datePublished || 0) - (a.datePublished || 0))
