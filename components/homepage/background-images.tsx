@@ -7,7 +7,9 @@ import styles from './homepage.module.scss'
 
 import { AnimatePresence, motion } from 'framer-motion'
 
-const BackgroundImages: React.FC<{ numImages: number }> = ({ numImages }) => {
+const numImages = 4
+
+const BackgroundImages = () => {
 	const [index, setIndex] = useState<number>(
 		Math.floor(Math.random() * numImages),
 	)

@@ -1,17 +1,13 @@
 /** @format */
 
-import { globSync } from 'glob'
 import React from 'react'
 
 import Homepage from '~/components/homepage'
 
-const Index: React.FC<{ numImages: number }> = ({ numImages }) => (
-	<Homepage numImages={numImages} />
-)
+const Index = () => <Homepage />
 
 export default Index
 
 export const getStaticProps = () => {
-	const imagePaths = globSync(`public/hero-images/*.jpg`)
-	return { props: { isFullscreen: true, numImages: imagePaths.length } }
+	return { props: { isFullscreen: true } }
 }

@@ -22,7 +22,7 @@ const variants = {
 	},
 }
 
-const Homepage: React.FC<{ numImages: number }> = ({ numImages }) => (
+const Homepage = () => (
 	<section
 		className={`hero is-primary fullscreen-overlay is-large is-fullheight-with-navbar ${styles.overflowNone}`}
 	>
@@ -30,7 +30,7 @@ const Homepage: React.FC<{ numImages: number }> = ({ numImages }) => (
 			<title>Welcome | Howard Dean Watts</title>
 		</Head>
 		<div className='hero-body' style={{ overflow: 'hidden' }}>
-			<BackgroundImages numImages={numImages} />
+			<BackgroundImages />
 			<motion.div
 				className={classnames('container', styles.homepageText)}
 				initial='hidden'
