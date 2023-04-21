@@ -1,19 +1,35 @@
 /** @format */
 
 import React, { useState } from 'react'
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 import useInterval from '~/helpers/use-interval'
 import styles from './homepage.module.scss'
 
 import { AnimatePresence, motion } from 'framer-motion'
 
-const numImages = 4
+import img0 from '~/public/hero-images/0.jpg'
+import img1 from '~/public/hero-images/1.jpg'
+import img2 from '~/public/hero-images/2.jpg'
+import img3 from '~/public/hero-images/3.jpg'
+
+interface Images {
+	[key: number]: StaticImageData
+}
+
+const IMAGES: Images = {
+	0: img0,
+	1: img1,
+	2: img2,
+	3: img3,
+}
+
+const NUM_IMAGES = Object.keys(IMAGES).length
 
 const BackgroundImages = () => {
-	const [index, setIndex] = useState<number>(
-		Math.floor(Math.random() * numImages),
+	const [index, setIndex] = useState<number>(() =>
+		Math.floor(Math.random() * NUM_IMAGES),
 	)
-	useInterval(() => setIndex(index + 1 >= numImages ? 0 : index + 1), 10000)
+	useInterval(() => setIndex(index + 1 >= NUM_IMAGES ? 0 : index + 1), 10000)
 
 	return (
 		<React.Fragment>
@@ -27,10 +43,12 @@ const BackgroundImages = () => {
 					exit={{ opacity: 0, zIndex: -2 }}
 				>
 					<Image
-						alt='Vercel logo'
-						src={require(`~/public/hero-images/${index}.jpg`)}
+						priority
+						placeholder='blur'
 						width={1000}
 						height={1000}
+						alt='Vercel logo'
+						src={IMAGES[index]}
 						style={{
 							maxWidth: '100vw',
 							height: 'auto',
