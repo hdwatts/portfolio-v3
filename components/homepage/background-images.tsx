@@ -1,7 +1,7 @@
 /** @format */
 
 import React, { useState } from 'react'
-import Img from 'react-optimized-image'
+import Image from 'next/image'
 import IntersectionPlaceholder from '~/components/intersection'
 import useInterval from '~/helpers/use-interval'
 import styles from './homepage.module.scss'
@@ -25,17 +25,18 @@ const BackgroundImages: React.FC<{ numImages: number }> = ({ numImages }) => {
 					transition={{ duration: 1 }}
 					exit={{ opacity: 0, zIndex: -2 }}
 				>
-					<IntersectionPlaceholder
+					<Image
+						alt='Vercel logo'
 						src={require(`~/public/hero-images/${index}.jpg`)}
-						lqip={require(`~/public/hero-images/${index}.jpg?lqip`)}
-						fullHeight
-					>
-						<Img
-							src={require(`~/public/hero-images/${index}.jpg`)}
-							webp
-							className={styles[`backgroundImage${index}`]}
-						/>
-					</IntersectionPlaceholder>
+						width={1000}
+						height={1000}
+						style={{
+							maxWidth: '100vw',
+							height: 'auto',
+							width: '100vw',
+						}}
+						className={styles[`backgroundImage${index}`]}
+					/>
 				</motion.div>
 			</AnimatePresence>
 		</React.Fragment>

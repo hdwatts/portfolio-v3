@@ -1,12 +1,18 @@
 /** @format */
 
-import React, { CSSProperties, PropsWithChildren, ReactElement } from 'react'
+import React, {
+	CSSProperties,
+	PropsWithChildren,
+	ReactElement,
+	useEffect,
+	useRef,
+	useState,
+} from 'react'
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import styles from './timeline.module.scss'
-import useIntersect from '../intersection/intersect'
-import { motion } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
 
 interface TimelineElementProps {
 	contentArrowStyle?: CSSProperties | object
@@ -26,7 +32,6 @@ const variants = {
 		y: 0,
 		transition: {
 			duration: 1,
-			dleay: 0.3,
 			y: {
 				type: 'spring',
 			},
@@ -45,7 +50,14 @@ const TimelineElement: React.FC<PropsWithChildren<TimelineElementProps>> = ({
 	style,
 	skills,
 }) => {
-	const { ref, isIntersecting } = useIntersect({}, true)
+	const ref = useRef(null)
+	const isInView = useInView(ref)
+	const [hasBeenInView, setHasBeenInView] = useState(false)
+	useEffect(() => {
+		if (!hasBeenInView && isInView) {
+			setHasBeenInView(true)
+		}
+	}, [isInView, hasBeenInView])
 
 	return (
 		<motion.div
@@ -53,7 +65,7 @@ const TimelineElement: React.FC<PropsWithChildren<TimelineElementProps>> = ({
 			style={style}
 			className={styles.timelineElement}
 			initial='hidden'
-			animate={isIntersecting ? 'show' : 'hidden'}
+			animate={hasBeenInView ? 'show' : 'hidden'}
 			variants={variants}
 		>
 			<React.Fragment>

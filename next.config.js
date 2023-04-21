@@ -1,12 +1,12 @@
 /** @format */
 
 const withPlugins = require('next-compose-plugins')
-const withOptimizedImages = require('next-optimized-images')
+
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
 	enabled: process.env.ANALYZE === 'true',
 })
 
-module.exports = withPlugins([withOptimizedImages, withBundleAnalyzer], {
+module.exports = withPlugins([withBundleAnalyzer], {
 	trailingSlash: true,
 	webpack: (config, { isServer }) => {
 		if (isServer) {

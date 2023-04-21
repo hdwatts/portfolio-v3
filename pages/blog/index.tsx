@@ -19,7 +19,7 @@ const Index = (props: any) => {
 					{posts &&
 						posts.map((post: PostData) => (
 							<Link href={post.canonicalUrl || ''} key={post.title}>
-								<a> {post.title} </a>
+								{post.title}
 							</Link>
 						))}
 				</Content>

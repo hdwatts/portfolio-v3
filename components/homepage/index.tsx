@@ -24,7 +24,7 @@ const variants = {
 
 const Homepage: React.FC<{ numImages: number }> = ({ numImages }) => (
 	<section
-		className={`hero is-primary fullscreen-overlay is-large is-fullheight-with-navbar`}
+		className={`hero is-primary fullscreen-overlay is-large is-fullheight-with-navbar ${styles.overflowNone}`}
 	>
 		<Head>
 			<title>Welcome | Howard Dean Watts</title>
@@ -54,8 +54,7 @@ const Homepage: React.FC<{ numImages: number }> = ({ numImages }) => (
 					</span>
 					<span className='vertical-divider'>|</span>
 					<span className={styles.line}>
-						Creator of{' '}
-						<a href='https://www.wordtree.app'>WordTree.app</a>
+						Creator of <a href='https://www.wordtree.app'>WordTree.app</a>
 					</span>
 					<span className='vertical-divider'>|</span>
 					<span className={styles.line}>New York, NY</span>
@@ -64,10 +63,11 @@ const Homepage: React.FC<{ numImages: number }> = ({ numImages }) => (
 					className={classnames('block buttons', styles.buttons)}
 					variants={variants}
 				>
-					<Link href='/about/'>
-						<a className={classnames('button is-inverted', styles.button)}>
-							<strong>Learn More</strong>
-						</a>
+					<Link
+						href='/about/'
+						className={classnames('button is-inverted', styles.button)}
+					>
+						<strong>Learn More</strong>
 					</Link>
 					{/*<Link href='/blog/'>
 						<a className={classnames('button is-inverted', styles.button)}>

@@ -8,10 +8,8 @@ const NavbarItem: React.FC<{
 	text: string
 	onClick?: MouseEventHandler
 }> = ({ href, text, onClick }) => (
-	<Link href={href}>
-		<a className='navbar-item' onClick={onClick}>
-			{text}
-		</a>
+	<Link href={href} className='navbar-item' onClick={onClick}>
+		{text}
 	</Link>
 )
 

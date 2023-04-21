@@ -9,6 +9,7 @@ import {
 	faCubes,
 	faChalkboardTeacher,
 	faPizzaSlice,
+	faGamepad,
 } from '@fortawesome/free-solid-svg-icons'
 
 const HdwattsTimeline: React.FC<{}> = () => (
@@ -16,12 +17,31 @@ const HdwattsTimeline: React.FC<{}> = () => (
 		<Timeline>
 			<TimelineElement
 				date='October 2017 - Present'
-				skills={['React', 'Node', 'C#', 'Python', 'Lambda', 'Rails', 'Ruby']}
+				skills={[
+					'React',
+					'Node',
+					'Python',
+					'Lambda',
+					'Rails',
+					'Ruby',
+					'Machine Learning',
+				]}
 				icon={faChartBar}
 			>
 				<h3>Chronograph Private Equity</h3>
 				<h4>Founding Team Member + Lead Software Developer</h4>
 				<ul>
+					<li>
+						Innovated and delivered high quality features to attract elite
+						private equity institutions. These features helped us stand out from
+						the entrenched competition and brought us from $0 to over $19.4
+						trillion total AUM coverage
+					</li>
+					<li>
+						Introduced codebase, API, data security, and employee onboarding
+						standards for a young company, growing the engineering team from a
+						team of one to over 20 people
+					</li>
 					<li>
 						Produced tools to streamline internal processes, such as custom
 						automation microservices and machine learning lambda functions. In
@@ -33,13 +53,27 @@ const HdwattsTimeline: React.FC<{}> = () => (
 						which securely handles data ingestion and digestion for clients via
 						custom formulas
 					</li>
+				</ul>
+			</TimelineElement>
+			<TimelineElement
+				date='April 2023 - Present'
+				skills={['React', 'ReactNative', 'Expo']}
+				icon={faGamepad}
+			>
+				<h3>WordTree - A Daily Word Puzzle</h3>
+				<h4>Solo Creator</h4>
+				<ul>
 					<li>
-						Worked with the latest web based technology such as React and Redux
-						to deliver for some of the largest private equity managers
+						Solo developed and published a game, WordTree, in my free time over
+						the first 4 months of 2023
 					</li>
 					<li>
-						Introduced codebase, API, data security, and employee onboarding
-						standards for a young company
+						Utilized React Native and Expo to build a unified experience across
+						the web and phone
+					</li>
+					<li>
+						The game is now freely available on the web, the App Store, and
+						Google Play marketplaces
 					</li>
 				</ul>
 			</TimelineElement>

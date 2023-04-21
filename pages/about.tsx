@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import Head from 'next/head'
 import React from 'react'
-import Img from 'react-optimized-image'
+import Image from 'next/image'
 import IntersectionPlaceholder from '~/components/intersection'
 import Timeline from '~/components/timeline'
 import { speedText } from '~/helpers/animation-variants'
@@ -51,18 +51,11 @@ export default About
 const PoolImage = () => (
 	<div className='columns is-mobile is-centered'>
 		<figure className='image column' style={{ maxWidth: 512 }}>
-			<IntersectionPlaceholder
-				isRounded
+			<Image
+				className='is-rounded about-image-border'
 				src={require(`~/public/about/working.png`)}
-				lqip={require(`~/public/about/working.png?lqip`)}
-				style={{ padding: 25 }}
-			>
-				<Img
-					className='is-rounded about-image-border'
-					src={require(`~/public/about/working.png`)}
-					webp
-				/>
-			</IntersectionPlaceholder>
+				alt='Just working away'
+			/>
 		</figure>
 	</div>
 )

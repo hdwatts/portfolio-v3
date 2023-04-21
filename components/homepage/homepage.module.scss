@@ -43,6 +43,12 @@
 		}
 	}
 }
+
+.overflowNone {
+	max-height: calc(100vh - 3.25rem);
+	overflow: hidden;
+}
+
 .transparentOverlay,
 .bgWrap {
 	position: fixed;

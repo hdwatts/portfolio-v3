@@ -52,10 +52,8 @@ const Header: React.FC<{ isFullscreen: boolean }> = ({ isFullscreen }) => {
 export default Header
 
 const Brand = () => (
-	<Link href='/'>
-		<a className='navbar-item'>
-			<FontAwesomeIcon icon={faCode} />
-			&nbsp;HDWatts
-		</a>
+	<Link href='/' className='navbar-item'>
+		<FontAwesomeIcon icon={faCode} />
+		&nbsp;HDWatts
 	</Link>
 )
