@@ -26,10 +26,4 @@ module.exports = withPlugins([withBundleAnalyzer], {
 		}
 		return config
 	},
-	webpackDevMiddleware: config => ({
-		watchOptions: {
-			poll: 1000,
-			aggregateTimeout: 300,
-		},
-	}),
 })
