@@ -22,7 +22,7 @@ const socials = [
 	{
 		link: 'https://www.instagram.com/deanwatts2',
 		icon: faInstagram,
-		message: 'Follow me on Instagram!',
+		message: 'More photos on Instagram!',
 	},
 	{
 		link: 'https://www.github.com/hdwatts',

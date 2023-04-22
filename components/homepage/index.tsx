@@ -1,13 +1,17 @@
 /** @format */
 import classnames from 'classnames'
 import React from 'react'
-import BackgroundImages from './background-images'
+import dynamic from 'next/dynamic'
 import Hellos from './hellos'
 import SocialList from '~/components/social-list'
 import styles from './homepage.module.scss'
 import Head from 'next/head'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+
+const BackgroundImages = dynamic(() => import('./background-images'), {
+	ssr: false,
+})
 
 const variants = {
 	hidden: { y: '100vh' },

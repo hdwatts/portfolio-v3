@@ -26,12 +26,15 @@ const IMAGES: Images = {
 const NUM_IMAGES = Object.keys(IMAGES).length
 
 const BackgroundImages = () => {
-	const [index, setIndex] = useState<number>(0)
-	useEffect(() => {
-		setIndex(Math.floor(Math.random() * NUM_IMAGES))
-	}, [])
+	const [index, setIndex] = useState<number>(
+		Math.floor(Math.random() * NUM_IMAGES),
+	)
 
 	useInterval(() => setIndex(index + 1 >= NUM_IMAGES ? 0 : index + 1), 10000)
+
+	if (index === -1) {
+		return null
+	}
 
 	return (
 		<React.Fragment>
