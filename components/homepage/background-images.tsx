@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Image, { StaticImageData } from 'next/image'
 import useInterval from '~/helpers/use-interval'
 import styles from './homepage.module.scss'
