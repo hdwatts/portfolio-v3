@@ -78,12 +78,12 @@ const App: React.FC = ({ Component, pageProps }: any) => (
 			<meta name='theme-color' content='#2e3440' />
 		</Head>
 		<DefaultSeo
-			titleTemplate='%s | Howard Dean Watts'
+			titleTemplate='%s | save for later'
 			description="Heya! I'm Howard Dean Watts! Welcome to my website!"
 			openGraph={{
 				type: 'website',
 				locale: 'en_IE',
-				url: 'https://www.hdwatts.com',
+				// url: 'https://www.hdwatts.com',
 				site_name: 'HDWatts',
 				title: 'Welcome',
 				images: [
