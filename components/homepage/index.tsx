@@ -2,7 +2,7 @@
 import classnames from 'classnames'
 import React from 'react'
 import dynamic from 'next/dynamic'
-import Hellos from './hellos'
+// import Hellos from './hellos'
 import SocialList from '~/components/social-list'
 import styles from './homepage.module.scss'
 import Head from 'next/head'
@@ -41,11 +41,11 @@ const Homepage = () => (
 				animate='show'
 				variants={variants}
 			>
-				<motion.div className='block' variants={variants}>
+				{/* <motion.div className='block' variants={variants}>
 					<h1 className='title'>
 						<Hellos />
 					</h1>
-				</motion.div>
+				</motion.div> */}
 				<motion.div className='block' variants={variants}>
 					<h2 className='subtitle'>I'm Howard Dean Watts</h2>
 				</motion.div>
