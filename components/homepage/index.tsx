@@ -31,7 +31,7 @@ const Homepage = () => (
 		className={`hero is-primary fullscreen-overlay is-large is-fullheight-with-navbar ${styles.overflowNone}`}
 	>
 		<Head>
-			<title>Welcome | Howard Dean Watts</title>
+			<title>save for later</title>
 		</Head>
 		<div className='hero-body' style={{ overflow: 'hidden' }}>
 			<BackgroundImages />
@@ -41,27 +41,14 @@ const Homepage = () => (
 				animate='show'
 				variants={variants}
 			>
-				{/* <motion.div className='block' variants={variants}>
-					<h1 className='title'>
-						<Hellos />
-					</h1>
-				</motion.div> */}
 				<motion.div className='block' variants={variants}>
-					<h2 className='subtitle'>I'm Howard Dean Watts</h2>
+					<h2 className='subtitle'>We're save for later</h2>
 				</motion.div>
 				<motion.div className='block' variants={variants}>
-					<span className={styles.line}>Lead Software Engineer</span>
-					<span className='vertical-divider'>+</span>
+					<span className={styles.line}>Dream pop duo </span>
 					<span className={styles.line}>
-						Founding Member of{' '}
-						<a href='https://www.chronograph.pe'>Chronograph.pe</a>
+						based in New York, NY{' '}
 					</span>
-					<span className='vertical-divider'>|</span>
-					<span className={styles.line}>
-						Creator of <a href='https://www.wordtree.app'>WordTree.app</a>
-					</span>
-					<span className='vertical-divider'>|</span>
-					<span className={styles.line}>New York, NY</span>
 				</motion.div>
 				<motion.div
 					className={classnames('block buttons', styles.buttons)}
@@ -73,11 +60,6 @@ const Homepage = () => (
 					>
 						<strong>Learn More</strong>
 					</Link>
-					{/*<Link href='/blog/'>
-						<a className={classnames('button is-inverted', styles.button)}>
-							<strong>Blog</strong>
-						</a>
-</Link>*/}{' '}
 					<SocialList />
 				</motion.div>
 			</motion.div>

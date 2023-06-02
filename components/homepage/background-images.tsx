@@ -9,8 +9,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 
 import img0 from '~/public/hero-images/0.jpg'
 import img1 from '~/public/hero-images/1.png'
-// import img2 from '~/public/hero-images/2.png'
-// import img3 from '~/public/hero-images/3.jpg'
+
 
 interface Images {
 	[key: number]: StaticImageData
@@ -19,8 +18,7 @@ interface Images {
 const IMAGES: Images = {
 	0: img0,
 	1: img1,
-	// 2: img2,
-	// 3: img3,
+
 }
 
 const NUM_IMAGES = Object.keys(IMAGES).length
