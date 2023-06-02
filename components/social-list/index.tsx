@@ -3,9 +3,11 @@
 import React from 'react'
 import {
 	faInstagram,
-	faGithub,
-	faLinkedin,
+	faTiktok,
+	faSpotify,
+	faApple,
 	IconDefinition,
+
 } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -15,25 +17,31 @@ import classnames from 'classnames'
 
 const socials = [
 	{
+		link: 'https://open.spotify.com/artist/2RhW8cptKrLvT1Y15gb1Wl?si=2NImO4wcThaNCZ5tJBQMqQ',
+		icon: faSpotify,
+		message: 'Listen to us on Spotify',
+	},
+	{
+		link: 'https://music.apple.com/us/artist/save-for-later/1591554219',
+		icon: faApple,
+		message: 'Check us out on Apple Music',
+	},
+	{
 		link: 'https://www.instagram.com/saveforlaterband',
 		icon: faInstagram,
-		message: 'Check us out on IG',
+		message: 'Follow us out on IG',
+	},
+	{
+		link: 'https://www.tiktok.com/@saveforlaterband',
+		icon: faTiktok,
+		message: 'Follow us on TikTok',
 	},
 	{
 		link: 'mailto:gandpband@gmail.com',
 		icon: faEnvelope,
 		message: 'Shoot us an Email!',
 	},
-	{
-		link: 'https://www.github.com/hdwatts',
-		icon: faGithub,
-		message: 'Fork me on GitHub!',
-	},
-	{
-		link: 'https://www.linkedin.com/in/hdwatts',
-		icon: faLinkedin,
-		message: 'Add me on LinkedIn!',
-	},
+
 ]
 const variants = {
 	hidden: { opacity: 1 },
