@@ -45,7 +45,7 @@ const Homepage = () => (
 					<h2 className='subtitle'>We're save for later</h2>
 				</motion.div>
 				<motion.div className='block' variants={variants}>
-					<span className={styles.line}>Dream pop duo </span>
+					<span className={styles.line}>A dream pop duo </span>
 					<span className={styles.line}>
 						based in New York, NY{' '}
 					</span>

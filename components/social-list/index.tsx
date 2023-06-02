@@ -15,14 +15,14 @@ import classnames from 'classnames'
 
 const socials = [
 	{
-		link: 'mailto:howard@hdwatts.com',
-		icon: faEnvelope,
-		message: 'Shoot me an Email!',
+		link: 'https://www.instagram.com/saveforlaterband',
+		icon: faInstagram,
+		message: 'Check us out on IG',
 	},
 	{
-		link: 'https://www.instagram.com/deanwatts2',
-		icon: faInstagram,
-		message: 'More photos on Instagram!',
+		link: 'mailto:gandpband@gmail.com',
+		icon: faEnvelope,
+		message: 'Shoot us an Email!',
 	},
 	{
 		link: 'https://www.github.com/hdwatts',
