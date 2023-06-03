@@ -53,12 +53,12 @@ const Homepage = () => (
 					className={classnames('block buttons', styles.buttons)}
 					variants={variants}
 				>
-					{/* <Link
-						href='/about/'
+					<Link
+						href='https://linktr.ee/saveforlater'
 						className={classnames('button is-inverted', styles.button)}
 					>
-						<strong>Learn More</strong>
-					</Link> */}
+						<strong>Links</strong>
+					</Link>
 					<SocialList />
 				</motion.div>
 			</motion.div>
