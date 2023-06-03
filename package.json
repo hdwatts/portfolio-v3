@@ -1,7 +1,7 @@
 {
-	"name": "hdwatts-portfolio-v3",
+	"name": "saveforlater-actual-website",
 	"version": "1.0.0",
-	"description": "\"Howard Watts personal portfolio, exploring Next.js and CheapStack\"",
+	"description": "\"save for later's website\"",
 	"main": "index.js",
 	"scripts": {
 		"dev": "next",
