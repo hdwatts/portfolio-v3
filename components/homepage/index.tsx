@@ -2,7 +2,6 @@
 import classnames from 'classnames'
 import React from 'react'
 import dynamic from 'next/dynamic'
-// import Hellos from './hellos'
 import SocialList from '~/components/social-list'
 import styles from './homepage.module.scss'
 import Head from 'next/head'
@@ -54,12 +53,12 @@ const Homepage = () => (
 					className={classnames('block buttons', styles.buttons)}
 					variants={variants}
 				>
-					<Link
+					{/* <Link
 						href='/about/'
 						className={classnames('button is-inverted', styles.button)}
 					>
 						<strong>Learn More</strong>
-					</Link>
+					</Link> */}
 					<SocialList />
 				</motion.div>
 			</motion.div>

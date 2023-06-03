@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCode } from '@fortawesome/free-solid-svg-icons'
 import classnames from 'classnames'
 import Link from 'next/link'
-
 import Burger from './burger'
 import NavbarItem from './navbar-item'
 
@@ -39,7 +38,6 @@ export default Header
 
 const Brand = () => (
 	<Link href='/' className='navbar-item'>
-		<FontAwesomeIcon icon={faCode} />
-		&nbsp;HDWatts
+		save for later
 	</Link>
 )
