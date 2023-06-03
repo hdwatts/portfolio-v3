@@ -2,7 +2,6 @@
 import classnames from 'classnames'
 import React from 'react'
 import dynamic from 'next/dynamic'
-// import Hellos from './hellos'
 import SocialList from '~/components/social-list'
 import styles from './homepage.module.scss'
 import Head from 'next/head'
@@ -55,10 +54,10 @@ const Homepage = () => (
 					variants={variants}
 				>
 					<Link
-						href='/about/'
+						href='https://linktr.ee/saveforlater'
 						className={classnames('button is-inverted', styles.button)}
 					>
-						<strong>Learn More</strong>
+						<strong>Links</strong>
 					</Link>
 					<SocialList />
 				</motion.div>
