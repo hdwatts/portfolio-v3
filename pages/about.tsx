@@ -10,7 +10,7 @@ import { speedText } from '~/helpers/animation-variants'
 const About: React.FC<{}> = () => (
 	<div>
 		<Head>
-			<title>About | Howard Dean Watts</title>
+			<title>save for later</title>
 		</Head>
 		<motion.section className='section'>
 			<div className='content'>
