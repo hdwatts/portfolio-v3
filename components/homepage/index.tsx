@@ -50,10 +50,10 @@ const Homepage = () => (
 					<h2 className='subtitle'>I'm Howard Dean Watts</h2>
 				</motion.div>
 				<motion.div className='block' variants={variants}>
-					<span className={styles.line}>Lead Software Engineer</span>
-					<span className='vertical-divider'>+</span>
+					<span className={styles.line}>Founding Staff Software Engineer</span>
+					<span className='vertical-divider' style={{margin: 0}}></span>
 					<span className={styles.line}>
-						Founding Member of{' '}
+						@{' '}
 						<a href='https://www.chronograph.pe'>Chronograph.pe</a>
 					</span>
 					<span className='vertical-divider'>|</span>
