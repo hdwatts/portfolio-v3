@@ -53,7 +53,7 @@ const Homepage = () => (
 					<span className={styles.line}>Founding Staff Software Engineer</span>
 					<span className='vertical-divider' style={{margin: 0}}></span>
 					<span className={styles.line}>
-						@{' '}
+						{' '}@{' '}
 						<a href='https://www.chronograph.pe'>Chronograph.pe</a>
 					</span>
 					<span className='vertical-divider'>|</span>
